@@ -1,15 +1,23 @@
-# Leetcode-
-在刷题过程中自己的一些心得体会
-解题思路
-方法1：哈希表
+# 两数之和
+_题目描述_
+链接：https://leetcode-cn.com/problems/two-sum
+给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
+# 示例
+```
+输入：nums = [2,7,11,15], target = 9
+输出：[0,1]
+解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
+```
+# 解题思路
+_方法1：哈希表_
 (1)初始化一个空的哈希表a，用来存储nums中的元素（key）和key对应的value值（即key就是元素值，value就是下标值，nums[key]=value);
 (2)用target-nums中的元素，并与a中的key比较，没有的话返回0，并把这个元素放到哈希表a中；
 (3)有的话，将此时哈希表中的key值对应的value值（即下标）读出，同时也把i值读出到容器vector中；
 
-代码
-
-
-class Solution {
+# 代码
+```
+{class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
        map<int,int> a;//初始化hash表，前一个int表示key（即存储nums中的元素），后一个int表示value（即存储元素对应的下标，也就是地址）
@@ -21,24 +29,19 @@ public:
                b[0]=a[target-nums[i]];//弄懂a[nums[i]]=i，表示标记元素nums[i]的下标为i，同理反推：target-nums[i]的下标为a[target-nums[i]]；value等于a[key]
                b[1]=i;//i存储在b[1]中
                 break;//找到直接break跳出循环，防止执行下面的语句
-
            }
-
             a[nums[i]]=i;//找不到就把这个元素和下面存进a中，让nums[i]的位置值为i
-
-
        }
        return b;
 
     }
 };
-
+```
 解题思路
 方法2：暴力求解
 
-代码
-
-
+# 代码
+```
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
@@ -57,3 +60,4 @@ public:
 
     }
 };
+```
