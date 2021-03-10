@@ -1,0 +1,26 @@
+# 思路
+（1）线性时间复杂度：暴力破解需要两次for循环，不满足题意；
+（2）不使用额外空间：哈希表的空间复杂度为O（n），不满足题意；
+（3）采用按位异或（⊕）：相同为0，不同为1；
+（4）异或运算的性质：
+```
+        1.  a ⊕ 0 = a  
+        2.  a ⊕ b = b ⊕ a
+        3.  a ⊕b ⊕ c = a ⊕ （b ⊕ c） = （a ⊕ b） ⊕ c;
+        4.  d = a ⊕ b ⊕ c 可以推出 a = d ⊕ b ⊕ c.
+        5.  a ⊕ b ⊕ a = b** 能理解性质5，这题自然迎刃而解
+```
+# C++代码
+```
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int ans=0;  //用来记录结果，初始值是0，是因为0和任何数字异或都是它本身
+        for(int i=0; i<nums.size(); i++)
+        {
+            ans=ans^nums[i];
+        }
+    return ans;
+    }
+};
+```
