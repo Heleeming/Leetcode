@@ -1,3 +1,4 @@
+**哈希表**
 # 两数之和
 _题目描述_
 链接：https://leetcode-cn.com/problems/two-sum
