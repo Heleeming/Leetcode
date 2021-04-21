@@ -1,7 +1,7 @@
 # 题目描述
 https://leetcode-cn.com/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/
 ## 解题思路1 
-首先我想到的方法，利用**s.sunstr(a,b)**截取字符串的一部分，例如s.sunstr(0,n)截取的是：从字符下标0开始截取n位字符，
+首先我想到的方法，利用**s.substr(a,b)**截取字符串的一部分，例如s.sunstr(0,n)截取的是：从字符下标0开始截取n位字符，
 那么剩下的字符就是s.substr(n,length-n),length指的是字符串的长度。（这里注意一下字符串的下标问题）
 ## 代码
 ```
